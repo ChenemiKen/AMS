@@ -1,0 +1,445 @@
+/*------  base  --------*/
+html,body{
+    height: 100%;
+    background-color: #F8F8F8;
+    /* font-family: Georgia, 'Times New Roman', Times, serif; */
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #4A4A4A;
+    overflow-x: hidden;
+}
+h1{
+    font-weight: bold;
+}
+.navbar-brand{
+    font-family: Righteous;
+    font-weight: bold;
+}
+.card{
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.125);
+}
+.buttonlike{
+    background-color: #5713EA;
+    border-radius: 17px;
+    padding: 2px 7px 5px 7px    ;
+    color: #fff;
+    font-size: 20px;
+    font-weight:bold;
+    word-spacing: 5px;
+    text-align: center;
+}
+.btn-primary{
+    background-color: #5713EA;
+    border-radius: 10px;
+}
+.blue{
+    color: #5713EA;
+}
+.red{
+    color:#F8076C;
+}
+main{
+    min-height: 100%;
+}
+footer{
+    background-color: #484D52;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right:0;
+    color: #fff;
+    padding: 10px 10px;
+}
+footer p{
+    text-align: center;
+    margin: auto;
+}
+
+/*------  Home page  --------*/
+#home-card{
+    top: 50px;
+    overflow: hidden;
+}
+.home{
+    background-image:linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.6)),url(../images/portrait_home.jpg);
+    background-size: cover;
+    border-radius: 0px 10px 10px 0px;
+    text-align: justify;
+}
+.home h1{
+    color: #fff;
+    font-family: Righteous;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 45px;
+    margin:60px auto auto 20px;
+}
+.smaller{
+    font-size: 40px;
+}
+.home-right{
+    padding: 5% 10%;
+    text-align: center;
+}
+
+/*--------- Login page ----------- */
+.login-form{
+    text-align: center;
+    margin-top: 60px;
+
+}
+.login-form h3{
+    color: #5713EA;
+    font-weight: bold;
+    border-bottom: 4px solid #F8076C;
+    padding-bottom: 5px;
+    width: 80px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#tile1{
+    position: fixed;
+    background-color: #f80780;
+    opacity: 0.3;
+    width: 260px;
+    height: 260px;
+    border-radius: 50px;
+    top: -20px;
+    right:0;
+    transform: rotate(120deg);
+}
+#tile2{
+    position: fixed;
+    background-color: #5713EA;
+    opacity: 0.6;
+    width: 70px;
+    height: 70px;
+    border-radius: 20px;
+    right: 12%;
+    top: 45%;
+    transform: rotate(120deg);
+}
+#tile3{
+    position: fixed;
+    background-color: #F8076C;
+    opacity: 0.6;
+    width: 70px;
+    height: 70px;
+    border-radius: 20px;
+    right:0;
+    top: 65%;
+    transform: rotate(120deg);
+}
+
+
+/*------  Dashboard page  --------*/
+.flex-container{
+    display: flex;
+    min-height: 95vh;
+    overflow: hidden;
+}
+#sidebar{
+    flex-basis: 10%;
+    background-color: #fff;
+    margin-right: 20px;
+    box-shadow: 2px 0px 3px 1px rgba(0, 0, 0, 0.17);
+    overflow: hidden;
+}
+
+#workspace{
+    flex-basis: 100%;
+    padding: 40px 100px 0px 1%;
+    margin: 0px 0px 30px 40px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.sidenav-item{
+    height: 100px;
+    border-bottom: .05px solid rgba(0, 0, 0, 0.3);
+}
+.sidenav-item a{
+    color: rgba(0, 0, 0, 0.65);
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    line-height: 50px;
+}
+.sidenav-item a div a{
+    font-size: 500px;
+}
+.sidenav-active{
+    color: #5713EA;
+}
+#workspace .row{
+    margin-bottom: 20px;
+}
+.sessions-card{
+    margin-top: 30px;
+    padding-top: 15px;
+    padding-bottom: 15px;  
+    text-align: center;
+    width:13%;  
+}
+.sidebar-toggle-icon{
+    color: #cac8d1;
+    font-size: 23px;
+    padding:0px 9px;
+    margin-left: 15px;
+    margin-right: 20px;
+    border: .2px solid #cac8d1;
+    border-radius: 2px;
+}
+.modal-content{
+    overflow: hidden;
+}
+
+/*------  Sessions page  --------*/
+table{
+    color: rgba(0, 0, 0, 0.125);
+}
+td, th{
+    color: rgba(0, 0, 0, 0.7);
+}
+td a{
+    color: #5713EA;
+    font-size:15px;
+    font-weight: 600;
+}
+
+/*------  Sessions details page  --------*/
+.details-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+.session-details{
+    display: flex;
+    flex:40%;
+    flex-wrap: wrap;
+}
+.details-container button{
+    flex:0 0 20%;
+    align-self:center;
+    margin-bottom: 7px;
+    height: 30px; 
+    padding-top: 2px; 
+}
+.session-details p{
+    flex:40%;
+    background-color: #fff;
+    border:1px solid #5713EA;
+    margin-right: 30px;
+    text-align: center;
+}
+.session-details p span{
+    font-weight: bold;
+}
+.students-table{
+    background-color:#fff;
+    border-radius: 5px;
+    border-color: #5713EA;
+
+}
+table.table-bordered > thead > tr > th,
+table.table-bordered > tbody > tr> th,
+table.table-bordered > tbody > tr> td{
+    border:1px solid #5713EA;
+    padding-top: 10px;
+    padding-bottom: 7px;
+
+}
+
+/*------  Admin dashboard page  --------*/
+/* ... */
+
+
+/*--------------------------*/
+/*--------  Media  ---------*/
+/*--------------------------*/
+@media(max-width: 1200px){
+/*large devices (lg)*/
+    /*------ base  --------*/
+    html, body {
+        overflow-x: hidden;
+    }
+    body {
+        position: relative
+    }
+    /*------ Home page ------*/
+    .home h1{
+        font-size: 35px;
+        margin:60px auto auto 20px;
+    }
+    .smaller{
+        font-size: 30px;
+    }
+    /* ------ Login page ------------ */
+    
+    /*------  Dashboard page  --------*/
+    #sidebar{
+        flex-basis: 15%;
+    }
+    /*------  Sessions details page  --------*/
+    .session-details p{
+        margin-right: 10px;
+    }
+}
+
+@media(max-width: 992px){
+/*medium devices (md)*/
+    /*------ base  --------*/
+    /*------ Home page ------*/
+    .home{
+        text-align: center;
+        padding-bottom: 40px;
+        padding-top: 40px;
+    }
+    .home h1{
+        font-size: 45px;
+        margin:unset;
+    }
+    .smaller{
+        font-size: 40px;
+    }
+    
+    /*------  Sessions details page  --------*/
+    .session-details{
+        flex:20%;
+        flex-direction: column;
+    }
+    .session-details p{
+        margin-right: 30px;
+    }
+    .details-container button{
+        flex:0 0 25%; 
+    }
+}
+
+@media(max-width: 768px){
+/*small devices (sm)*/
+    /*------ base  --------*/
+    /*------  Home page  --------*/
+    #home-card{
+        top: 30px;
+    }
+
+    /*--------- Login Page -----------*/
+    #tile1{
+        width: 200px;
+        height: 200px;
+        top: 0px;
+        right:0;
+    }
+    #tile2{
+        opacity: 0.4;
+        right: 12%;
+        top: 40%;
+    }
+    #tile3{
+        opacity: 0.4;
+        right:0;
+        top: 60%;
+    }
+
+    /*------  Dashboard page  --------*/
+    #sidebar{
+        flex-basis: 20%;
+        margin-right: 15px;
+    }
+    #workspace{
+        padding: 40px 20px 0px .2%;
+        margin: 0px 0px 30px 5px;
+        overflow-x: scroll;
+    }
+    #workspace .row div button{
+        font-size: 15px;
+    }
+    .sessions-card{
+        width: 25%;
+    }
+
+    /*------  Sessions details page  --------*/
+    .details-container button{
+        flex:15%;
+    }
+}
+
+@media(max-width: 567px){
+/*extrasmall devices (xs)*/
+    /*------ base  --------*/
+    h2{
+        font-size: 21px;
+    }
+    h6{
+        font-size: 11px;
+    }
+
+    /*------  Home page  --------*/
+    .home h1{
+        font-size: 35px;
+    }
+    .smaller{
+        font-size: 32px;
+    }
+
+    /*--------- Login page ----------- */
+    .login-form small{
+       font-size: 65%;
+
+    }
+    #tile1{
+        width: 145px;
+        height: 160px;
+        top: 0px;
+        right:0;
+    }
+    #tile2{
+        opacity: 0.3;
+        right: 25%;
+        top: 40%;
+    }
+    #tile3{
+        opacity: 0.3;
+        right:0;
+        top: 60%;
+    }
+
+    /*------  Dashboard page  --------*/
+    #sidebar{
+        flex-basis: 45%;
+        margin-right: 8px;
+    }
+    #workspace .row div button{
+        width: 110%;
+        font-size: 9px;
+        padding:3px 2px;
+    }
+    .sessions-card{ 
+        width:35%;  
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    #workspace .buttonlike{
+        font-size: 15px;
+    }
+
+    /*------  Sessions details page  --------*/
+    .session-details{
+        flex:100%;
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+    .session-details p{
+        margin-right: 5px;
+        width: 130px;
+        flex-basis: 130px;
+        font-size: 13px;
+        padding-left: 4px;
+        padding-right: 4px;
+        margin-bottom: 7px;
+    }
+    .details-container button{
+        flex:0 0 90%;
+ 
+    }
+}

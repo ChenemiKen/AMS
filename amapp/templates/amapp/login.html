@@ -1,0 +1,26 @@
+{% extends 'amapp/base.html' %}
+{% block title %}AMS-Login{% endblock %}
+{% block login-active %}class="nav-item active"{% endblock %}
+{% block content %}
+  <div class="container">
+    <main>
+        <div class="tiles" id="tile1"></div>
+        <div class="tiles" id="tile2"></div>
+        <div class="tiles" id="tile3"></div>
+        <div class="login-form col-10 offset-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+            <h3>Login</h3>
+            <small>Enter username <span class="red">or</span> register name to login</small>
+            <form action="{% url 'amapp:login'%}" method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                <input type="text" name="username" placeholder="Username or Reg Name" class="form-control">
+                </div>
+                <div class="form-group">
+                <input type="password" name="password" placeholder="Password" class="form-control">
+                </div>
+                <button type="submit" class="btn btn-primary">Login &nbsp;<i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+            </form>
+        </div>
+    </main>
+  </div>
+{% endblock %}

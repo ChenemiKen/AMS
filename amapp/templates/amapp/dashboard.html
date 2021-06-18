@@ -1,0 +1,72 @@
+{% extends 'amapp/base.html' %}
+{% block title %}AMS-Register dashboard{% endblock %}
+{% block dashboard-active %}class="nav-item active"{% endblock %}
+{% block content %}
+  <main>
+    <div class="flex-container">
+        <div id="sidebar" class="collapse show">
+            <div class="sidenav-item">
+                <a href="{% url 'amapp:register_dashboard' request.session.register_id %}">
+                    <div class="sidenav-active my-4">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <h6>Dashboard</h6>
+                    </div>
+                </a>
+            </div>
+            <div class="sidenav-item my-4">
+                <a href="{% url 'amapp:my_sessions' request.session.register_id %}">
+                    <div>
+                        <i class="fas fa-calendar-alt"></i>
+                        <h6>Sessions</h6>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div id="workspace">
+            <div class="row">
+                <div class="col-6">
+                    <h2>{{register.name}}</h2>
+                    <h6>Register Id:&nbsp;<span class="blue">{{register.reg_id}}</span></h6>
+                </div>
+                <div class="col-6 my-sm-4">
+                    <button class="btn btn-primary float-right mx-sm-4" data-toggle="modal" data-target="#exampleModalCenter">Start a session&nbsp;<i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+                </div>
+            </div>
+            <div class="sessions-card card">
+                <h1>{{session_count}}</h1>
+                <h6>Sessions</h6>
+            </div>  
+        </div> 
+    </div>
+    <!------- Modal ----------->
+    <div class="modal fade bd-example-modal-xl" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+          <div class="modal-content">
+                <div class="row">
+                    <div class="home col-lg-4">
+                      <h1>ATTENDANCE<br><span class="smaller">MANAGEMENT</span><br>SYSTEM</h1>
+                    </div>
+                    <div class="home-right col-lg-8">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                      <p class="buttonlike col-md-6 offset-md-3 mb-4">Start a session</p>
+                      <form action="#">
+                        <div class="form-group">
+                          <input type="text" placeholder="Register Name" class="form-control">
+                        </div>
+                        <div class="form-group">
+                          <input type="text" placeholder="Devide Id" class="form-control">
+                        </div>
+                        <div class="form-group">
+                          <input type="password" placeholder="Password" class="form-control">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Start &nbsp;<i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+                      </form>
+                    </div>
+                </div>
+          </div>
+        </div>
+    </div>
+  </main>
+{% endblock %}
