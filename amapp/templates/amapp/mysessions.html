@@ -51,7 +51,7 @@
                         <td>{{session.date}}</td>
                         <td>{{session.start}}</td>
                         <td>{{session.end}}</td>
-                        <td><a href="#">View</a></td>
+                        <td><a href="{% url 'amapp:session_details' request.session.register_id session.id %}">View</a></td>
                     </tr>
                     {% endfor %}
                 </tbody>

@@ -7,6 +7,8 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
+
+import amapp
 from .decorators import register_signin_required
 from .models import Register, Session
 
@@ -75,3 +77,13 @@ class SessionListView(generic.ListView):
         context = {'Register':register, 'Sessions':sessions}
         print(context)
         return context
+
+@method_decorator(register_signin_required, name='dispatch')
+class SessionDetailsView(generic.DetailView):
+    model = Session
+    template_name = 'amapp/session_details.html'
+    context_object_name = 'session'
+    
+    # def get_queryset(self):
+    #     session = Session.objects.get(id = self.kwargs['sid'])
+    #     attendees = 

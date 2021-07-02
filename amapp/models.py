@@ -11,13 +11,20 @@ class Student(models.Model):
     email = models.EmailField()
     department = models.CharField(max_length=20)
     level = models.IntegerField()
-    fingerprintId = models.IntegerField()
+    fingerprintId = models.IntegerField(null=True)
+
+
+    def __str__(self):
+            return self.last_name+' '+self.first_name+' '+self.other_names
 
 
 class Register(models.Model):
     name = models.CharField(max_length=10)
     reg_id = models.CharField(max_length=10)
     password = models.CharField(max_length=250)
+
+    def __str__(self):
+            return self.name
 
 
 class Session(models.Model):
@@ -26,3 +33,8 @@ class Session(models.Model):
     start = models.TimeField()
     end = models.TimeField()
     register = models.ForeignKey(to=Register, on_delete=CASCADE)
+    attendees = models.ManyToManyField(Student, blank=True)
+    session_id = models.CharField(max_length=10, unique=True)
+
+    def __str__(self):
+            return self.title+' '+str(self.date)
