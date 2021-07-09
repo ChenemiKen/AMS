@@ -1,0 +1,95 @@
+{% extends 'amapp/base.html' %}
+{% block title %}AMS-Add student{% endblock %}
+{% block dashboard-active %}class="nav-item active"{% endblock %}
+{% block content %}
+    <main>
+        <div class="flex-container">
+            <div id="sidebar" class="collapse show">
+                <div class="sidenav-item">
+                    <a href="#">
+                        <div class="sidenav-active my-4">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <h6>Dashboard</h6>
+                        </div>
+                    </a>
+                </div>
+                <div class="sidenav-item my-4">
+                    <a href="#">
+                        <div>
+                            <i class="fas fa-calendar-alt"></i>
+                            <h6>Sessions</h6>
+                        </div>
+                    </a>
+                </div>
+                <div class="sidenav-item my-4">
+                    <a href="#">
+                        <div>
+                            <i class="fas fa-address-card"></i>
+                            <h6>Students</h6>
+                        </div>
+                    </a>
+                </div>
+                <div class="sidenav-item my-4">
+                    <a href="#">
+                        <div>
+                            <i class="fas fa-user-plus"></i>
+                            <h6>Add student</h6>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div id="workspace">
+                <div class="row heading-ve-margn">
+                    <div class="col-6 offset-3 my-sm-4 ">
+                        <button class="btn btn-primary ml-auto mx-sm-4">Add Student&nbsp;</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-7 card cred">
+                        <h6 class="blue mb-4">Credentials</h6>
+                        <form action="#" id="add-student-form">
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <input name='first_name' type="text" placeholder="First Name" class="form-control">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <input name=last_name type="text" placeholder="Last Name" class="form-control">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                              <input name='other_names' type="text" placeholder="Other Names" class="form-control">
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <input name='mat_no' type="text" placeholder="Mat no." class="form-control">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <input name=level type="text" placeholder="Level" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <input name='email' type="text" placeholder="Email address" class="form-control">
+                            </div>
+                            
+                            <div class="form-group">
+                                <input name='dept' type="text" placeholder="Department" class="form-control">
+                            </div>
+                            <button type="submit" class="btn btn-primary mr-auto" id="submit-btn">Submit &nbsp;<i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+                        </form>
+                    </div>
+                    <div class="col-md-4 bio-cred">
+                        <div class="card mb-4">
+                            <h6 class="blue mb-5">Biometric Credentials</h6>
+                            <p><i class="fas fa-fingerprint fa-7x"></i></p>
+                        </div>
+                        <button type="submit" class="btn btn-secondary" id='finish-btn'>Finish</button>
+                    </div>
+                </div>
+                
+            </div> 
+        </div>
+    </main>
+{% endblock %}

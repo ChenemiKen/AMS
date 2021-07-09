@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'ams.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'ams',
+        'NAME': 'ams2',
         'USER': 'root',
         'PASSWORD': '',
         'HOST': 'localhost',

@@ -87,3 +87,6 @@ class SessionDetailsView(generic.DetailView):
     # def get_queryset(self):
     #     session = Session.objects.get(id = self.kwargs['sid'])
     #     attendees = 
+
+def addstudent(request):
+    return render(request, template_name='amapp/addstudent1.html')

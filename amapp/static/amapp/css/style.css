@@ -10,6 +10,9 @@ html,body{
 h1{
     font-weight: bold;
 }
+.form-control{
+    background-color:#F8F8F7;
+}
 .navbar-brand{
     font-family: Righteous;
     font-weight: bold;
@@ -82,7 +85,6 @@ footer p{
     padding: 5% 10%;
     text-align: center;
 }
-
 /*--------- Login page ----------- */
 .login-form{
     text-align: center;
@@ -250,7 +252,25 @@ table.table-bordered > tbody > tr> td{
 }
 
 /*------  Admin dashboard page  --------*/
-/* ... */
+/*------  Addstudent1 page  --------*/
+.heading-ve-margn{
+    margin-top: -40px;
+    text-align: center;
+}
+.cred{
+    padding:30px 25px;
+    text-align: center;
+}
+.bio-cred{
+    padding: 20x 20px;
+    text-align: center;
+    margin-top: 80px;
+    opacity: 0.5;
+}
+.bio-cred .card{
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
 
 
 /*--------------------------*/

@@ -11,5 +11,6 @@ urlpatterns=[
     path('register-dashboard/<int:pk>', views.RegisterDashboard.as_view(), name='register_dashboard'),
     path('mysessions/<int:pk>', views.SessionListView.as_view(), name='my_sessions'),
     path('session_details/<int:pk>/<int:sid>',views.SessionDetailsView.as_view(),name='session_details'),
-
+    path('addstudent',views.addstudent, name='addstudent'),
+    
 ]
