@@ -1,7 +1,10 @@
+import string
+import random
+from datetime import datetime
+
 from django import contrib
 from django.http import HttpResponse
 from django.http.response import Http404
-from amapp import models
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views import View, generic
 from django.contrib import messages
@@ -9,7 +12,9 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.hashers import make_password, check_password
 from django.utils.decorators import method_decorator
-from datetime import datetime
+from django.db import IntegrityError
+
+from amapp import models
 import amapp
 from .decorators import register_signin_required
 from .models import Register, Session
@@ -108,11 +113,20 @@ class CreateRegisterView(View):
         password2=request.POST['password2']
 
         if password1 == password2:
-            new_register = Register(name=reg_name, password=make_password(password1))
-            new_register.save()
-            messages.success(request, 'Register created successfully!')
-            request.session['register_id'] = new_register.id
-            return redirect('amapp:register_dashboard', pk=new_register.id)
+            try:
+                new_register = Register(name=reg_name, email=email, password=make_password(password1))
+                new_register.save()
+                # reg_id generation
+                id_plus_year = 'reg'+str(new_register.id)+'d'+str(datetime.now().date().year)[2:]
+                n = len(id_plus_year)
+                new_register.reg_id =id_plus_year+''.join(random.choices(string.ascii_uppercase + string.digits, k=10-n))
+                new_register.save()
+                messages.success(request, 'Register created successfully!')
+                request.session['register_id'] = new_register.id
+                return redirect('amapp:register_dashboard', pk=new_register.id)
+            except IntegrityError:
+                messages.error(request, "the given registername already exists.")
+                return render(request, template_name='amapp/create_register.html');
         else:
             messages.error(request, 'Passwords do not match')
             return render(request, template_name='amapp/create_register.html');

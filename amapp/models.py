@@ -1,4 +1,4 @@
-from os import name
+from os import name, truncate
 from django.db import models
 from django.db.models.deletion import CASCADE, SET_NULL
 
@@ -19,9 +19,11 @@ class Student(models.Model):
 
 
 class Register(models.Model):
-    name = models.CharField(max_length=10)
-    reg_id = models.CharField(max_length=10)
+    name = models.CharField(max_length=10, unique=True)
+    reg_id = models.CharField(max_length=10, unique=True)
+    email = models.EmailField()
     password = models.CharField(max_length=250)
+
 
     def __str__(self):
             return self.name
